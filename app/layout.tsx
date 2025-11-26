@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />     {/* Header always on top */}
-        <main style={{ paddingTop: "80px" }}>
+        <main >
           {children}    {/* Page content */}
         </main>
       </body>
