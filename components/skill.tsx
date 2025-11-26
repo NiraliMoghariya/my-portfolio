@@ -10,34 +10,31 @@ export default function SkillsCurveSection() {
   ];
 
   return (
-    <section className="relative z-30 w-full bg-pink-300 text-white pt-32 pb-20 overflow-hidden -mt-18">
+    <section className="relative z-30 w-full bg-pink-300 text-black h-[250px] flex justify-center items-center text-center overflow-hidden">
       {/* TOP CURVE */}
       <div
         className="absolute top-0 left-0 w-full h-44 bg-black"
         style={{
-          clipPath: "ellipse(80% 60% at 50% -20%)",
+          clipPath: "ellipse(56% 55% at 50% -20%)",
         }}
       />
 
-      {/* CONTENT */}
-      <div className="relative z-10 max-w-5xl mx-auto text-center" >
-
-        <div className="flex flex-wrap justify-center gap-8 text-xl font-semibold">
-          {skills.map((skill, i) => (
-            <span key={i} className="opacity-90 hover:opacity-100 transition">
-              #{skill}
-            </span>
-          ))}
-        </div>
+      {/* CONTENT (CENTERED NOW) */}
+      <div className="relative z-10 flex flex-wrap gap-6 text-xl font-semibold -mt-8">
+        {skills.map((skill, i) => (
+          <span key={i} className="opacity-90 hover:opacity-100 transition">
+            #{skill}
+          </span>
+        ))}
       </div>
 
       {/* BOTTOM CURVE */}
       <div
-        className="absolute bottom-0 left-0 w-full h-44 bg-black"
+        className="absolute bottom-0 left-0 w-full h-44 bg-white"
         style={{
-          clipPath: "ellipse(80% 60% at 50% 100%)",
+          clipPath: "ellipse(60% 55% at 50% 100%)",
         }}
       />
     </section>
-  );
+  );
 }
