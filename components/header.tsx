@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import {
   FaFacebookF,
@@ -25,10 +25,25 @@ export default function Home() {
     });
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 30) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
   return (
-    <main className="relative">
+    <main className="relative bg-black">
       {/* Hero Background Image */}
-      <div
+      {/* <div
         className="absolute bg-transparent inset-0 z-0"
         style={{
           backgroundImage: ` 
@@ -36,25 +51,26 @@ export default function Home() {
 
           backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 0.1,
         }}
       ></div>
-
+      <div className="absolute inset-0 bg-black/80 z-0"></div> */}
       {/* NAVBAR */}
       <header
-        className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-black shadow-lg" : "bg-transparent"
-        }`}
+        className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-black shadow-lg" : "bg-transparent py-6"
+          }`}
       >
-        <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+        <nav className="max-w-7xl mx-auto flex items-center justify-between py-3">
           {/* Logo */}
           <Link href="/" className="cursor-pointer z-50">
             <Image
               src={"/LOGO.png"}
-              alt="Nirali Moghariya Logo"
-              width={140}
-              height={120}
+              alt="Logo"
+              width={scrolled ? 80 : 140}
+              height={scrolled ? 60 : 120}
+              className="transition-all duration-300"
             />
+
           </Link>
 
           {/* Desktop Menu */}
@@ -62,8 +78,8 @@ export default function Home() {
             className={`hidden md:flex items-center gap-8 font-medium z-50 transition-all duration-300 text-white`}
           >
             <li>
-    <Link href="#home" className="hover:text-indigo-600">HOME</Link>
-  </li>
+              <Link href="#home" className="hover:text-indigo-600">HOME</Link>
+            </li>
             <li>
               <Link href="#about" className="hover:text-indigo-600">
                 ABOUT
@@ -82,9 +98,9 @@ export default function Home() {
                 <HiOutlineDocumentText size={22} />
               </a>
               <span className="hover:text-indigo-600 underline underline-offset-4">
-MY RESUME</span>
+                MY RESUME</span>
             </li>
-            <button className="py-2 px-4 bg-[#9A9A9A] text-black rounded-md hover:bg-[#B5B5B5]">
+            <button className="py-2 px-4 bg-[#9A9A9A] cursor-pointer text-black rounded-md hover:bg-[#B5B5B5]">
               Hire Me Now
             </button>
           </ul>
@@ -138,11 +154,11 @@ MY RESUME</span>
 
           {/* BUTTONS */}
           <div className="flex items-center gap-4 mt-6">
-            <button className="py-3 px-6 bg-[#9A9A9A] text-black rounded-lg text-lg hover:bg-[#B5B5B5]">
+            <button className="py-3 px-6 cursor-pointer bg-[#9A9A9A] text-black rounded-lg text-lg hover:bg-[#B5B5B5]">
               Hire Me Now
             </button>
 
-            <button className="py-3 px-6 border border-gray-700 rounded-lg text-lg">
+            <button className="py-3 px-6 cursor-pointer border border-gray-700 rounded-lg text-lg">
               WhatsApp
             </button>
           </div>
