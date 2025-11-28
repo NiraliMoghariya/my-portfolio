@@ -3,7 +3,7 @@ import RoundedButton from "./common/ServiceChip";
 export default function Services() {
   return (
     <div className="w-full bg-white ">
-      <h2 className="text-3xl md:text-5xl font-extrabold mb-10 text-black max-w-5xl mx-auto text-center">
+      <h2 className="text-3xl md:text-5xl font-extrabold text-black max-w-5xl mx-auto text-center">
         MY SERVICES
       </h2>
 

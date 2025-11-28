@@ -39,11 +39,10 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
   return (
     <main className="relative bg-black">
       {/* Hero Background Image */}
-      {/* <div
+      <div
         className="absolute bg-transparent inset-0 z-0"
         style={{
           backgroundImage: ` 
@@ -53,14 +52,14 @@ export default function Home() {
           backgroundPosition: "center",
         }}
       ></div>
-      <div className="absolute inset-0 bg-black/80 z-0"></div> */}
+      <div className="absolute inset-0 bg-black/80 z-0"></div>
       {/* NAVBAR */}
       <header
-        className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-black shadow-lg" : "bg-transparent py-6"
-          }`}
+        className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
+          scrolled ? "bg-black shadow-lg" : "bg-transparent py-6"
+        }`}
       >
-
-        <nav className="max-w-7xl mx-auto flex items-center justify-between py-3">
+        <nav className="max-w-7xl  px-6  mx-auto flex items-center justify-between py-3">
           {/* Logo */}
           <Link href="/" className="cursor-pointer z-50">
             <Image
@@ -70,15 +69,20 @@ export default function Home() {
               height={scrolled ? 60 : 120}
               className="transition-all duration-300"
             />
-
           </Link>
 
           {/* Desktop Menu */}
           <ul
-            className={`hidden md:flex items-center gap-8 font-medium z-50 transition-all duration-300 text-white`}
+            className={`hidden md:flex items-center 
+  gap-8 lg:gap-6 md:gap-4
+  font-medium z-50 transition-all duration-300 text-white
+  whitespace-nowrap 
+  lg:text-base md:text-sm`}
           >
             <li>
-              <Link href="#home" className="hover:text-indigo-600">HOME</Link>
+              <Link href="#home" className="hover:text-indigo-600">
+                HOME
+              </Link>
             </li>
             <li>
               <Link href="#about" className="hover:text-indigo-600">
@@ -86,8 +90,8 @@ export default function Home() {
               </Link>
             </li>
 
-            <li className="hover:text-indigo-600 cursor-pointer">SERVICES</li>
-            <li className="hover:text-indigo-600 cursor-pointer">MY WORK</li>
+            <li className="hover:text-indigo-600 cursor-pointer">EXPERIENCE</li>
+            <li className="hover:text-indigo-600 cursor-pointer">PROJECTS</li>
             <li className="hover:text-indigo-600 cursor-pointer">CONTACT</li>
             <li className="flex items-center cursor-pointer">
               <a
@@ -98,7 +102,8 @@ export default function Home() {
                 <HiOutlineDocumentText size={22} />
               </a>
               <span className="hover:text-indigo-600 underline underline-offset-4">
-                MY RESUME</span>
+                MY RESUME
+              </span>
             </li>
             <button className="py-2 px-4 bg-[#9A9A9A] cursor-pointer text-black rounded-md hover:bg-[#B5B5B5]">
               Hire Me Now
@@ -118,7 +123,7 @@ export default function Home() {
           <div className="md:hidden w-full px-6 py-4 space-y-4 font-medium text-white z-50">
             <p>HOME</p>
             <p>ABOUT</p>
-            <p>SERVICES</p>
+            <p>EXPERIENCE</p>
             <p>MY WORK</p>
             <p>CONTACT</p>
             <p>MY RESUME</p>
@@ -130,7 +135,10 @@ export default function Home() {
       </header>
 
       {/* HERO SECTION */}
-      <section id="home" className="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-45 pb-20 px-10 gap-10 z-20 text-white">
+      <section
+        id="home"
+        className="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-50 pb-20 px-10 gap-10 z-20 text-white"
+      >
         {/* LEFT CONTENT */}
         <div className="w-full md:w-1/2">
           <div className="flex items-center gap-2 text-xl">

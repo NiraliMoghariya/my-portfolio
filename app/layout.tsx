@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "My Portfolio",
@@ -17,8 +19,11 @@ export default function RootLayout({
       <body>
         <Header />     {/* Header always on top */}
         <main >
-          {children}    {/* Page content */}
+          {children} 
+                  <Toaster position="top-right" />
+   {/* Page content */}
         </main>
+        <Footer/>
       </body>
     </html>
   );
