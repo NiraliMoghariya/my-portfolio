@@ -51,6 +51,12 @@ export default function Contact() {
     <section id="contact" className="w-full bg-white py-12">
       <div className="max-w-7xl mx-auto px-6">
         {/* TITLE */}
+           <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: false }}
+    >
         <div className="text-left mb-10">
           <h2 className="text-3xl md:text-5xl font-extrabold text-black">Contact</h2>
           <p className="text-gray-700 mt-4 text-lg leading-relaxed">
@@ -58,10 +64,18 @@ export default function Contact() {
             opportunities together.
           </p>
         </div>
+            </motion.div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* LEFT SIDE */}
           <div className="bg-blue-50 p-6 rounded-xl shadow-sm">
+           <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false }}
+      >
             <div className="mb-6 flex items-start gap-4">
               <div className="w-10 h-10 bg-[#9A9A9A] text-white flex items-center justify-center rounded-full">
                 <HiLocationMarker className="text-white text-2xl" />
@@ -93,10 +107,17 @@ export default function Contact() {
                 <p className="text-gray-700">+91 7777939764</p>
               </div>
             </div>
+          </motion.div>
           </div>
 
           {/* RIGHT SIDE – FORM */}
           <div className="bg-white p-6 rounded-xl shadow-md border">
+              <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false }}
+      >
             <form className="space-y-5" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* NAME */}
@@ -178,6 +199,7 @@ export default function Contact() {
                 </p>
               )}
             </form>
+            </motion.div>
           </div>
         </div>
       </div>

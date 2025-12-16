@@ -7,6 +7,9 @@ import { Toaster } from "react-hot-toast";
 export const metadata: Metadata = {
   title: "My Portfolio",
   description: "Created with Next.js",
+  icons: {
+    icon: "/favicons/android-chrome-192x192.png",
+  },
 };
 
 export default function RootLayout({
@@ -21,7 +24,6 @@ export default function RootLayout({
         <main >
           {children} 
            <Toaster position="top-right" />
-   {/* Page content */}
         </main>
         <Footer/>
       </body>
