@@ -1,33 +1,29 @@
 "use client";
 
-interface EducationItem {
-  institute: string;
-  degree: string;
-  location: string;
-  date: string;
-  points: string[];
-}
-
-const education: EducationItem[] = [
+const education = [
   {
+    degree: "Bachelor of Science in Information Technology",
     institute: "Silver Oak University",
-    degree: "Bachelor of Engineering – Computer Engineering",
+    date: "Aug 2022 - May-2025",
     location: "Ahmedabad, India",
-    date: "2021 - 2025",
     points: [
-      "Focused on Web Development & Cloud Technology",
-      "Completed multiple real-world projects using React & Next.js",
-      "Participated in coding competitions and tech workshops",
+      "Gained strong foundational and advanced knowledge in programming, software development, and web technologies.",
+      "Completed multiple hands-on projects using React.js, Vue.js, Next.js, Tailwind CSS, API integration, and modern frontend development practices.",
+      "Studied core subjects including Data Structures, Database Management, Operating Systems, Networking, and Software Engineering.",
+      "Participated in practical labs, team projects, and problem-solving activities to strengthen real-world technical skills.",
+      "Developed a strong interest in frontend development, UI/UX, and modern JavaScript frameworks.",
     ],
   },
   {
-    institute: "Gujarat Board",
     degree: "Higher Secondary Education",
+    institute: "Gujarat Board",
+    date: "Aug 2021 - May-2022",
     location: "Surat, India",
-    date: "2020 - 2021",
     points: [
-      "Completed 12th Science (PCM)",
-      "Strong interest in problem-solving & logic building",
+      "Completed 12th Commerce with a strong academic foundation.",
+      "Developed skills in accounting, business studies, and economics.",
+      "Built strong interest in problem-solving, logical thinking, and analytical decision-making.",
+      "Actively participated in school-level academic activities and coursework.",
     ],
   },
 ];
@@ -35,54 +31,35 @@ const education: EducationItem[] = [
 export default function Education() {
   return (
     <section className="w-full bg-white py-10">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
+        <h3 className="text-3xl font-extrabold text-[#050d18] mb-6 ml-2">
+          Education
+        </h3>
 
-        {/* Title */}
-        <div className="text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-black mb-10 tracking-wide">
-            EDUCATION
-          </h2>
-        </div>
+        <div className="space-y-10">
+          {education.map((edu, i) => (
+            <div key={i} className="relative border-l-2 border-[#1f5297] pl-6">
+              {/* Circle */}
+              <span className="absolute left-[-9px] top-1 w-4 h-4 bg-white border-2 border-[#1f5297] rounded-full"></span>
 
-        {/* Timeline */}
-        <div className="relative md:pl-16 pt-5">
-          {/* Full vertical line */}
-          <div className="hidden md:block absolute left-8 top-0 w-[3px] bg-black h-full" />
+              <h4 className="text-xl font-semibold uppercase text-[#050d18] mb-2">
+                {edu.degree}
+              </h4>
 
-          {education.map((edu, index) => (
-            <div
-              key={index}
-              className="relative flex flex-col md:flex-row gap-4 pb-16 text-center md:text-left"
-            >
-              {/* Dot on line - Desktop */}
-              <div className="hidden md:block absolute -left-11 top-2">
-                <div className="w-6 h-6 bg-black rounded-full" />
-              </div>
+              <h5 className="bg-[#e4edf9] text-black inline-block text-sm font-semibold px-3 py-1 mb-2">
+                {edu.date}
+              </h5>
 
-              {/* Content */}
-              <div className="flex-1">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-                  <div>
-                    <h3 className="font-bold text-xl text-black">{edu.degree}</h3>
-                    <p className="text-indigo-600 font-semibold">{edu.institute}</p>
-                  </div>
+              <p className="italic text-gray-700 mb-3">{edu.institute}</p>
 
-                  <div>
-                    <p className="font-medium text-black">{edu.date}</p>
-                    <p className="text-gray-600 text-sm">{edu.location}</p>
-                  </div>
-                </div>
-
-                <ul className="mt-3 list-disc list-inside text-gray-700 space-y-2 text-left md:text-left">
-                  {edu.points.map((p, i) => (
-                    <li key={i}>{p}</li>
-                  ))}
-                </ul>
-              </div>
+              <ul className="list-disc pl-4 text-gray-700 space-y-1">
+                {edu.points.map((p, idx) => (
+                  <li key={idx}>{p}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -3,13 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
   FaRegHand,
+  FaWhatsapp,
 } from "react-icons/fa6";
+import toast from "react-hot-toast";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -55,11 +58,11 @@ export default function Home() {
       <div className="absolute inset-0 bg-black/80 z-0"></div>
       {/* NAVBAR */}
       <header
-        className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
+        className={`w-full fixed top-0 left-0 z-30 transition-all duration-300 ${
           scrolled ? "bg-black shadow-lg" : "bg-transparent py-6"
         }`}
       >
-        <nav className="max-w-7xl  px-6  mx-auto flex items-center justify-between py-3">
+        <nav className="max-w-7xl px-6  mx-auto flex items-center justify-between py-3">
           {/* Logo */}
           <Link href="/" className="cursor-pointer z-50">
             <Image
@@ -89,10 +92,21 @@ export default function Home() {
                 ABOUT
               </Link>
             </li>
+            <li>
+              <Link href="#myjourney" className="hover:text-indigo-600">
+                MY JOURNEY
+              </Link>
+            </li>
+            <li>
+              <Link href="#projects" className="hover:text-indigo-600">
+                PROJECTS
+              </Link>
+            </li>
 
-            <li className="hover:text-indigo-600 cursor-pointer">EXPERIENCE</li>
-            <li className="hover:text-indigo-600 cursor-pointer">PROJECTS</li>
-            <li className="hover:text-indigo-600 cursor-pointer">CONTACT</li>
+            {/* <li className="hover:text-indigo-600 cursor-pointer">MY JOURNEY</li> */}
+            {/* <li className="hover:text-indigo-600 cursor-pointer">PROJECTS</li> */}
+            {/* <li className="hover:text-indigo-600 cursor-pointer">CONTACT</li> */}
+
             <li className="flex items-center cursor-pointer">
               <a
                 href="/resume.pdf"
@@ -101,12 +115,20 @@ export default function Home() {
               >
                 <HiOutlineDocumentText size={22} />
               </a>
-              <span className="hover:text-indigo-600 underline underline-offset-4">
+
+              <a
+                href="/resume.pdf"
+                download="Nirali's Resume.pdf"
+                onClick={() => toast.success("Downloading Resume…")}
+                className="hover:text-indigo-600 underline underline-offset-4"
+              >
                 MY RESUME
-              </span>
+              </a>
             </li>
             <button className="py-2 px-4 bg-[#9A9A9A] cursor-pointer text-black rounded-md hover:bg-[#B5B5B5]">
-              Hire Me Now
+              <Link href="#contact" className="hover:text-indigo-600">
+                CONTACT
+              </Link>
             </button>
           </ul>
 
@@ -135,70 +157,122 @@ export default function Home() {
       </header>
 
       {/* HERO SECTION */}
-      <section
-        id="home"
-        className="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-50 pb-20 px-10 gap-10 z-20 text-white"
-      >
-        {/* LEFT CONTENT */}
-        <div className="w-full md:w-1/2">
-          <div className="flex items-center gap-2 text-xl">
-            <FaRegHand className="text-indigo-600 text-3xl" />
-            <span>HELLO I'M</span>
-          </div>
+  {/* HERO SECTION */}
+<section
+  id="home"
+  className="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-50 pb-20 px-10 gap-10 z-20 text-white"
+>
+  {/* LEFT CONTENT */}
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.4, ease: "easeOut" }}
+    viewport={{ once: false }}
+    className="w-full md:w-1/2"
+  >
+    {/* HELLO LINE */}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2, duration: 1.2, ease: "easeOut" }}
+      viewport={{ once: false }}
+      className="flex items-center gap-2 text-xl"
+    >
+      <FaRegHand className="text-indigo-600 text-3xl" />
+      <span>HELLO I'M</span>
+    </motion.div>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold mt-2 leading-tight">
-            NIRALI <br />
-            MOGHARIYA
-          </h1>
+    {/* NAME */}
+    <motion.h1
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4, duration: 1.3, ease: "easeOut" }}
+      viewport={{ once: false }}
+      className="text-4xl md:text-6xl font-extrabold mt-2 leading-tight"
+    >
+      NIRALI <br /> MOGHARIYA
+    </motion.h1>
 
-          <p className="mt-4 max-w-xxl leading-relaxed">
-            Welcome to my Frontend Developer Portfolio! As a passionate and
+    {/* PARAGRAPH */}
+    <motion.p
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.6, duration: 1.3, ease: "easeOut" }}
+      viewport={{ once: false }}
+      className="mt-4 max-w-xxl leading-relaxed"
+    >
+        Welcome to my Frontend Developer Portfolio! As a passionate and
             skilled web developer, I am dedicated to creating innovative and
             user-friendly websites that leave a lasting impression. With a
             strong foundation in web technologies and a keen eye for design, I
             take pride in delivering cutting-edge solutions that meet clients'
             needs and exceed their expectations.
-          </p>
+    </motion.p>
 
-          {/* BUTTONS */}
-          <div className="flex items-center gap-4 mt-6">
-            <button className="py-3 px-6 cursor-pointer bg-[#9A9A9A] text-black rounded-lg text-lg hover:bg-[#B5B5B5]">
-              Hire Me Now
-            </button>
+    {/* BUTTON */}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.8, duration: 1.2, ease: "easeOut" }}
+      viewport={{ once: false }}
+      className="flex items-center gap-4 mt-6"
+    >
+      <a
+        href="#contact"
+        className="py-3 px-6 cursor-pointer bg-[#9A9A9A] text-black rounded-lg text-lg hover:bg-[#B5B5B5]"
+      >
+        CONTACT
+      </a>
+    </motion.div>
 
-            <button className="py-3 px-6 cursor-pointer border border-gray-700 rounded-lg text-lg">
-              WhatsApp
-            </button>
-          </div>
+    {/* SOCIAL ICONS — Slow stagger */}
+    <motion.div
+      className="flex items-center gap-5 mt-6 text-xl"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false }}
+      variants={{
+        hidden: {},
+        show: {
+          transition: { staggerChildren: 0.35 },
+        },
+      }}
+    >
+      {[
+        {
+          href: "https://wa.me/917777939764",
+          icon: <FaWhatsapp />,
+          hover: "hover:text-green-500",
+        },
+        {
+          href: "https://www.instagram.com/nir__1804/",
+          icon: <FaInstagram />,
+          hover: "hover:text-pink-500",
+        },
+        {
+          href: "https://www.linkedin.com/in/nirali-moghariya-548564293/",
+          icon: <FaLinkedinIn />,
+          hover: "hover:text-blue-400",
+        },
+      ].map((item, index) => (
+        <motion.a
+          key={index}
+          href={item.href}
+          target="_blank"
+          className={`text-white ${item.hover}`}
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            show: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 1.1, ease: "easeOut" }}
+        >
+          {item.icon}
+        </motion.a>
+      ))}
+    </motion.div>
+  </motion.div>
+</section>
 
-          {/* SOCIAL ICONS */}
-          <div className="flex items-center gap-5 mt-6 text-xl">
-            <a
-              href="https://facebook.com/yourprofile"
-              target="_blank"
-              className="text-white hover:text-blue-600"
-            >
-              <FaFacebookF />
-            </a>
-
-            <a
-              href="https://instagram.com/yourprofile"
-              target="_blank"
-              className="text-white hover:text-pink-500"
-            >
-              <FaInstagram />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/nirali-moghariya-548564293/"
-              target="_blank"
-              className="text-white hover:text-blue-400"
-            >
-              <FaLinkedinIn />
-            </a>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

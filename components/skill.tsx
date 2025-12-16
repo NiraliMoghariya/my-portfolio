@@ -7,6 +7,7 @@ export default function SkillsCurveSection() {
     "JavaScript",
     "ReactJS",
     "NextJS",
+    "VueJS",
     "PayloadCMS"
   ];
 

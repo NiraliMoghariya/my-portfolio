@@ -1,127 +1,67 @@
 "use client";
 
-interface ExperienceItem {
-  company: string;
-  role: string;
-  location: string;
-  date: string;
-  points: string[];
-}
-
-const experiences: ExperienceItem[] = [
+const experiences = [
   {
+    title: "Frontend Developer",
     company: "Silico Software Solutions",
-    role: "Frontend Developer",
-    location: "Surat, India",
     date: "July 2025 - Present",
+    location: "Surat, India",
     points: [
-      "Developed core Next.js web application with dynamic routing & SSR/CSR",
-      "Built a headless CMS using Payload CMS with custom APIs",
-      "Improved performance using Next/Image & Axios",
-      "Handled secure routing and cookie-based authentication",
+      "Building responsive, user-friendly web interfaces using React.js, Next.js, and Tailwind CSS.",
+      "Implementing animations, API integrations, and reusable components to improve UI/UX.",
+      "Collaborating with UI/UX designers and backend developers to deliver high-quality features.",
+      "Optimizing website performance, accessibility, and code quality.",
+      "Working on real client projects and contributing to scalable, production-level applications.",
     ],
   },
   {
+    title: "ReactJS Intern",
     company: "Appegic Technologies",
-    role: "ReactJS Intern",
-    location: "Ahmedabad, India",
     date: "Sep 2024 - May 2025",
+    location: "Ahmedabad, India",
     points: [
-      "Built and maintained interactive web apps using ReactJS",
-      "Optimized components for performance across devices",
-      "Worked with UI/UX team to improve user experience",
-      "Participated in code reviews & Agile workflows",
+      "Assisted in developing dynamic and responsive web applications using React.js and modern JavaScript.",
+      "Built reusable components and collaborated with the team to implement frontend features.",
+      "Gained hands-on experience with state management, API integration, and version control (Git).",
+      "Participated in code reviews and learned best practices for clean, maintainable, and scalable code.",
+      "Contributed to real client projects, enhancing both technical skills and understanding of professional workflows.",
     ],
   },
 ];
 
 export default function Experience() {
   return (
-    <section className="w-full bg-white">
-        <div className=" max-w-5xl mx-auto px-6">
+    <section className="w-full bg-white py-10">
+      <div className="max-w-6xl mx-auto px-6">
+        <h3 className="text-3xl font-extrabold text-[#050d18] mb-6 ml-2">
+          Experience
+        </h3>
 
-        
-       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl md:text-5xl text-black font-extrabold mb-10 tracking-wide">
-          EXPERIANCE
-        </h2>
-      </div>
+        <div className="space-y-10">
+          {experiences.map((exp, i) => (
+            <div key={i} className="relative border-l-2 border-[#1f5297] pl-6">
+              {/* Circle */}
+              <span className="absolute left-[-9px] top-1 w-4 h-4 bg-white border-2 border-[#1f5297] rounded-full"></span>
 
-<div className="relative md:pl-16  pt-5 ">
-  {/* Full vertical connector line */}
-<div className="hidden md:block absolute left-8 top-0 w-[3px] bg-black h-full"></div>
+              <h4 className="text-xl font-semibold uppercase text-[#050d18] mb-2">
+                {exp.title}
+              </h4>
 
-  {/* {experiences.map((exp, index) => (
-    <div 
-      key={index}
-      className="relative grid grid-cols-1 md:grid-cols-4 gap-4 pb-16"
-    >
-<div className="hidden md:block absolute -left-11 top-2">
-        <div className="relative flex items-center justify-center">
-          <div className="w-6 h-6 bg-black rounded-full"></div>
+              <h5 className="bg-[#e4edf9] text-black inline-block text-sm font-semibold px-3 py-1 mb-2">
+                {exp.date}
+              </h5>
+
+              <p className="italic text-gray-700 mb-3">{exp.company}</p>
+
+              <ul className="list-disc pl-4 text-gray-700 space-y-1">
+                {exp.points.map((p, idx) => (
+                  <li key={idx}>{p}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
-
-      <div className="col-span-3">
-        <h3 className="font-bold text-xl text-black">{exp.role}</h3>
-        <p className="text-indigo-600 font-semibold">{exp.company}</p>
-
-        <ul className="mt-3 list-disc list-inside text-gray-700 space-y-2">
-          {exp.points.map((p, i) => (
-            <li key={i}>{p}</li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="text-right">
-        <p className="font-medium text-black">{exp.date}</p>
-        <p className="text-gray-500 text-sm">{exp.location}</p>
-      </div>
-    </div>
-  ))} */}
-  {experiences.map((exp, index) => (
-  <div
-    key={index}
-    className="relative flex flex-col md:flex-row md:items-start gap-4 pb-16"
-  >
-
-    {/* Circle - only Desktop */}
-    <div className="hidden md:block absolute -left-11 top-2">
-      <div className="w-6 h-6 bg-black rounded-full"></div>
-    </div>
-
-    {/* LEFT — Role + Company + Points */}
-   <div className="flex-1 text-center md:text-left">
-  <div className="flex flex-col md:flex-row md:justify-between items-center md:items-start gap-4">
-
-        <div>
-      <h3 className="font-bold text-xl text-black">{exp.role}</h3>
-      <p className="text-indigo-600 font-semibold">{exp.company}</p>
-</div>
-<div>
-      <p className="font-medium text-black">{exp.date}</p>
-      <p className="text-gray-500 text-sm">{exp.location}</p>
-</div>
-</div>
-      <ul className="mt-3 list-disc list-inside text-gray-700 space-y-2">
-        {exp.points.map((p, i) => (
-          <li key={i}>{p}</li>
-        ))}
-      </ul>
-    </div>
-
-    {/* RIGHT — Date + Location */}
- 
-  </div>
-))}
-
-</div>
-
-
-
-      </div>
     </section>
-
-
   );
 }

@@ -1,59 +1,93 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function AboutSection() {
   return (
-    <section  id="about" className="w-full bg-white text-black pt-20 pb-20 px-6">
+  <section id="about" className="w-full bg-white text-black pt-20 pb-20 px-6">
       <div className="max-w-5xl mx-auto text-center">
+
         {/* Title */}
-        <h2 className="text-3xl md:text-5xl font-extrabold mb-10 tracking-wide">
-          ABOUT ME
-        </h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 50 }}    
+          whileInView={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 1.4, ease: "easeOut" }} 
+          className="text-3xl md:text-5xl font-extrabold mb-10 tracking-wide"
+        >
+          About Me
+        </motion.h2>
 
         {/* Paragraphs */}
-        <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700">
-          <p>
-            Why Do You Hire Me For Your Next Website Project?
-          </p>
-
-          <p>
-            With Over 6 Years Of Experience As A Full-Stack Developer, 
-            I Bring Expertise In Laravel, Node.Js, Next.Js, And JavaScript 
-            To Deliver Dynamic And Scalable Web Solutions. My Passion Lies 
-            In Building Websites That Enhance User Experiences While 
-            Addressing Unique Business Challenges.
-          </p>
-
-          <p>
-            Whether It’s Crafting Seamless Applications Or Designing 
-            Platforms That Drive Growth, I Focus On Delivering Results 
-            That Truly Make An Impact. I Am Committed To Providing 
-            Innovative, Reliable, And Future-Proof Solutions Tailored 
-            To Your Specific Needs.
-          </p>
-
-          <p>
-            Combining Creativity With Technical Precision, I Ensure Every 
-            Project Is Completed On Time And Exceeds Expectations. 
-            Let Me Help You Turn Your Vision Into Reality And Build 
-            A Digital Presence That Sets You Apart.
-          </p>
-        </div>
-
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-          <a
-            href="#contact"
-            className="px-8 py-3 rounded-lg bg-[#9A9A9A]  hover:bg-[#B5B5B5] text-black transition"
+        <motion.div
+          className="space-y-6 text-sm md:text-lg leading-relaxed text-gray-700"
+          initial="hidden"
+          whileInView="show"
+          variants={{
+            hidden: {},
+            show: {
+              transition: {
+                staggerChildren: 0.35,
+              },
+            },
+          }}
+        >
+          {/* Paragraph 1 */}
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              show: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            Hire Me Now
-          </a>
+            Hi! I am a passionate Frontend Developer with 1 year of professional
+            experience, specializing in building modern, responsive, and
+            user-friendly web applications.
+          </motion.p>
 
-          <a
-            href="https://wa.me/your_number"
-            target="_blank"
-            className="px-8 py-3 rounded-lg border border-gray-700 text-black transition"
+          {/* Paragraph 2 */}
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              show: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            <span>Whatsapp</span>
-          </a>
-        </div>
+            I have hands-on experience with <strong>React.js</strong>,{" "}
+            <strong>Next.js</strong>, <strong>PayloadCMS</strong>, <strong>Core Vue.js</strong>, <strong>HTML</strong>,{" "}
+            <strong>CSS</strong>, <strong>Tailwind CSS</strong>, and{" "}
+            <strong>JavaScript</strong>. I focus on writing clean,
+            maintainable code while creating engaging user interfaces that work
+            seamlessly across devices.
+          </motion.p>
+
+          {/* Paragraph 3 */}
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              show: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
+            I enjoy transforming design concepts into fully functional websites,
+            optimizing performance, and ensuring a smooth user experience. My
+            goal is to deliver high-quality solutions that meet client
+            requirements and help businesses grow online.
+          </motion.p>
+
+          {/* Paragraph 4 */}
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              show: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
+            As a motivated developer, I continuously learn and explore new
+            technologies to enhance my skills. I am committed to building
+            projects that are not only visually appealing but also reliable,
+            efficient, and scalable.
+          </motion.p>
+        </motion.div>
       </div>
     </section>
   );

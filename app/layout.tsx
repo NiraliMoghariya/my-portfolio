@@ -17,10 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />     {/* Header always on top */}
+        <Header />    
         <main >
           {children} 
-                  <Toaster position="top-right" />
+           <Toaster position="top-right" />
    {/* Page content */}
         </main>
         <Footer/>
