@@ -45,16 +45,6 @@ export default function Footer() {
       {/* Divider */}
       <div className="w-full max-w-3xl mx-auto border-t border-gray-600 my-6"></div>
 
-      {/* Contact Button */}
-     <div className="flex justify-center items-center gap-4 mt-6">
-    <button className="py-3 px-6 whitespace-nowrap cursor-pointer bg-[#9A9A9A] text-black rounded-lg text-lg hover:bg-[#B5B5B5]">
-              Contact Me
-            </button>
-
-  <button className="py-3 px-6 cursor-pointer border border-gray-700 rounded-lg text-lg hover:bg-white hover:text-black transition">
-    WhatsApp
-  </button>
-</div>
 
       {/* Bottom Copyright */}
       <p className="text-gray-400 text-xs mt-6">
