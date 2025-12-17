@@ -197,8 +197,12 @@ export default function Home() {
 
           {/* Text */}
           <p className="mt-4 text-gray-300 text-sm sm:text-base md:text-[1.09rem] leading-relaxed">
-            Welcome to my Frontend Developer Portfolio! I’m passionate about
-            crafting modern, responsive, and user-friendly web experiences.
+             Welcome to my Frontend Developer Portfolio! As a passionate and
+            skilled web developer, I am dedicated to creating innovative and
+            user-friendly websites that leave a lasting impression. With a
+            strong foundation in web technologies and a keen eye for design, I
+            take pride in delivering cutting-edge solutions that meet clients'
+            needs and exceed their expectations.
           </p>
 
           {/* Button */}
