@@ -171,7 +171,7 @@ export default function Home() {
 
       {/* HERO */}
       <section
-        id="home"
+        id="/"
         className="relative max-w-7xl mx-auto px-6 pt-40 md:pt-40 pb-20 text-white z-20"
       >
         <motion.div
