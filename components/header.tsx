@@ -212,7 +212,7 @@ export default function Home() {
           </div>
 
           {/* Social */}
-          <div className="flex gap-6 mt-10 text-xl text-gray-400">
+          <div className="flex gap-6 mt-7 text-xl text-gray-400">
             <a
               href="https://wa.me/917777939764"
               target="_blank"
