@@ -172,7 +172,7 @@ export default function Home() {
       {/* HERO */}
       <section
         id="/"
-        className="relative max-w-7xl mx-auto px-6 pt-40 md:pt-40 pb-20 text-white z-20"
+        className="relative max-w-7xl mx-auto px-6 pt-40 md:pt-40 md:pb-20 pb-10 text-white z-20"
       >
         <motion.div
           initial={{ opacity: 0, y: 40 }}
