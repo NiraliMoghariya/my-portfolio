@@ -1,4 +1,4 @@
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -18,15 +18,15 @@ export default function Footer() {
       {/* Social Links */}
       <div className="flex justify-center gap-6 mt-5 text-xl">
           <a
-                      href="https://facebook.com/yourprofile"
-                      target="_blank"
-                      className="text-white hover:text-blue-600"
-                    >
-                      <FaFacebookF />
-                    </a>
+                        href="https://wa.me/917777939764"
+                        target="_blank"
+                        className="hover:text-green-500 transition"
+                      >
+                        <FaWhatsapp />
+                      </a>
         
                     <a
-                      href="https://instagram.com/yourprofile"
+              href="https://www.instagram.com/nir__1804/"
                       target="_blank"
                       className="text-white hover:text-pink-500"
                     >
@@ -34,7 +34,7 @@ export default function Footer() {
                     </a>
         
                     <a
-                      href="https://www.linkedin.com/in/nirali-moghariya-548564293/"
+              href="https://www.linkedin.com/in/nirali-moghariya-548564293/"
                       target="_blank"
                       className="text-white hover:text-blue-400"
                     >
@@ -44,6 +44,7 @@ export default function Footer() {
 
       {/* Divider */}
       <div className="w-full max-w-3xl mx-auto border-t border-gray-600 my-6"></div>
+
 
 
       {/* Bottom Copyright */}
